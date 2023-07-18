@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         billingClient = BillingClient.newBuilder(this).setListener(purcahseUpdatedListner)
             .enablePendingPurchases().build()
 

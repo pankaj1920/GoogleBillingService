@@ -139,7 +139,7 @@ class SubscriptionListActivity : AppCompatActivity() {
 
             override fun onItemClick(position: Int) {
                 val item = itemArrayList[position]
-                val productId = item.planIndex
+                productId = item.planIndex
 
                 subscribeProduct()
             }
@@ -186,6 +186,7 @@ class SubscriptionListActivity : AppCompatActivity() {
                                 this@SubscriptionListActivity,
                                 billingFlowParams
                             )
+
                         }
                     }
                 }
@@ -249,7 +250,7 @@ class SubscriptionListActivity : AppCompatActivity() {
                 Toast.makeText(this, "Already Subscribed", Toast.LENGTH_SHORT).show()
                 return
             }
-        }else if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED){
+        }else if (purchase.purchaseState == Purchase.PurchaseState.PENDING){
             Toast.makeText(this, "Purchase Pending", Toast.LENGTH_SHORT).show()
         }else if (purchase.purchaseState == Purchase.PurchaseState.UNSPECIFIED_STATE){
             Toast.makeText(this, "UnSpecified State", Toast.LENGTH_SHORT).show()
